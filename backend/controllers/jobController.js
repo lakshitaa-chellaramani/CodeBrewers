@@ -13,6 +13,7 @@ export const createJob = async (req, res, next) => {
       vacancies,
       experience,
       desc,
+      keywords,
       requirements,
     } = req.body;
 
@@ -22,7 +23,8 @@ export const createJob = async (req, res, next) => {
       !location ||
       !salary ||
       !requirements ||
-      !desc
+      !desc ||
+      !keywords
     ) {
       next("Please Provide All Required Fields");
       return;
@@ -41,6 +43,7 @@ export const createJob = async (req, res, next) => {
       vacancies,
       experience,
       detail: { desc, requirements },
+      keywords,
       company: id,
     };
 
