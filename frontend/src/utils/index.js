@@ -41,9 +41,11 @@ export const handleFileUpload = async(uploadFile) => {
         console.log(error)
     }
 }
+
 export const updateURL=({
     pageNum,
     query,
+    keyws,
     cmpLoc,
     sort,
     navigate,
@@ -72,8 +74,12 @@ export const updateURL=({
     if(exp){
         params.set("exp",exp);
     }
+    if(keyws){
+        params.set("keyws",keyws);
+    }
     const newURL=`${location.pathname}?${params.toString()}`;
     navigate(newURL,{replace: true});
 
     return newURL;
 }
+

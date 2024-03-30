@@ -1,5 +1,4 @@
-
-function calculateSimilarity(string1, string2) {
+export const calculateSimilarity = (string1, string2) => {
     // Tokenize strings into arrays of words
     const words1 = string1.split(/\s+/);
     const words2 = string2.split(/\s+/);
@@ -17,7 +16,7 @@ function calculateSimilarity(string1, string2) {
     return similarity;
 }
 
-function countWords(words) {
+export const countWords = (words) =>{
     const wordCount = {};
     words.forEach(word => {
         wordCount[word] = (wordCount[word] || 0) + 1;
@@ -25,7 +24,7 @@ function countWords(words) {
     return wordCount;
 }
 
-function countCommonWords(wordCount1, wordCount2) {
+export const countCommonWords = (wordCount1, wordCount2) => {
     let commonWords = 0;
     for (const word in wordCount1) {
         if (wordCount2.hasOwnProperty(word)) {
@@ -34,9 +33,3 @@ function countCommonWords(wordCount1, wordCount2) {
     }
     return commonWords;
 }
-
-// Example usage
-const string1 = "hello world hello";
-const string2 = "hello hello hello";
-const similarity = calculateSimilarity(string1, string2);
-console.log("Similarity between the two strings:", similarity);

@@ -22,6 +22,7 @@ const FindJobs = () => {
   const [filterJobTypes, setFilterJobTypes] = useState([]);
   const [filterExp, setFilterExp] = useState([]);
   const [expVal, setExpVal] = useState([]);
+  const [searchKeywords, setSearchKeywords] = useState("");
 
 
   const [isFetching, setIsFetching] = useState(false);
@@ -35,6 +36,7 @@ const FindJobs = () => {
     const newURL = updateURL({
       pageNum: page,
       query: searchQuery,
+      keyws: searchKeywords,
       comLoc : jobLocation,
       sort: sort,
       navigate: navigate,

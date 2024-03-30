@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Jobs from "../models/jobsModel.js";
 import Companies from "../models/companiesModel.js";
+import { calculateSimilarity } from "../utils.js"
 
 export const createJob = async (req, res, next) => {
   console.log("createJob")
@@ -125,11 +126,18 @@ export const updateJob = async (req, res, next) => {
 
 export const getJobPosts = async (req, res, next) => {
   try {
-    const { search, sort, location, jtype, exp } = req.query;
+    const { search, sort, location, jtype, exp, keyws } = req.query;
     const types = jtype?.split(","); //full-time,part-time
     const experience = exp?.split("-"); //2-6
 
     let queryObject = {};
+
+    // if(keyws) {
+    //   const count = await Jobs.countDocuments(Jobs.find(queryObject));
+    //   for(let i=0;i<count;i++) {
+    //     calculateSimilarity(keyws, )
+    //   }
+    // }
 
     if (location) {
       queryObject.location = { $regex: location, $options: "i" };
