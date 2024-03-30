@@ -22,6 +22,7 @@ const FindJobs = () => {
   const [filterJobTypes, setFilterJobTypes] = useState([]);
   const [filterExp, setFilterExp] = useState([]);
   const [expVal, setExpVal] = useState([]);
+  const [searchKeywords, setSearchKeywords] = useState("");
 
 
   const [isFetching, setIsFetching] = useState(false);
@@ -35,6 +36,7 @@ const FindJobs = () => {
     const newURL = updateURL({
       pageNum: page,
       query: searchQuery,
+      keyws: searchKeywords,
       comLoc : jobLocation,
       sort: sort,
       navigate: navigate,
@@ -57,6 +59,34 @@ const FindJobs = () => {
       console.log(error);
     }
   }
+
+  const handleSearchSubmit = async () => {
+    // Reset pagination and filters for new search
+    setPage(1);
+    setRecordCount(0);
+    setFilterJobTypes([]);
+    setFilterExp([]);
+    setExpVal([]);
+
+    // Perform keyword comparison and update search query
+    const keywords = extractKeywords(searchQuery);
+    if (keywords.length > 0) {
+      setSearchQuery(keywords.join(" ")); // Use keywords as the search query
+    }
+
+    
+
+    // Fetch jobs with updated search query
+    await fetchJobs();
+  };
+
+  // Function to extract keywords from the search query
+  const extractKeywords = (query) => {
+    // Implement your keyword extraction logic here
+    // For example:
+    return query.toLowerCase().split(/\W+/).filter((word) => word.length > 2);
+  };
+
   const filterJobs = (val) => {
     if (filterJobTypes?.includes(val)) {
       setFilterJobTypes(filterJobTypes.filter((el) => el != val));
@@ -93,7 +123,7 @@ const FindJobs = () => {
       <Header
         title='Find Your Dream Job with Ease'
         type='home'
-        handleClick={() => {}}
+        handleClick={handleSearchSubmit}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         location={jobLocation}

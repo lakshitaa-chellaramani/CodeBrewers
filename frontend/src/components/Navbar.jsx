@@ -9,6 +9,9 @@ import CustomButton from "./CustomButton";
 import { users } from "../utils/data";
 import { useSelector, useDispatch } from "react-redux";
 import { Logout } from "../redux/userSlice"
+
+
+
 function MenuList({ user, onClick }) {
   const dispatch = useDispatch();
 
@@ -17,6 +20,9 @@ function MenuList({ user, onClick }) {
     window.location,replace("/")
   };
   console.log(user)
+ 
+
+
   return (
     <div>
       <Menu as='div' className='inline-block text-left'>
@@ -143,7 +149,8 @@ const Navbar = () => {
              
           </ul>
 
-
+          <div>
+          </div>    
           <div className='hidden lg:block'>
             {!user?.token ? (
               <Link to='/user-auth'>
