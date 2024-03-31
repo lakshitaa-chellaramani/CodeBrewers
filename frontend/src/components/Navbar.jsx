@@ -126,9 +126,16 @@ const Navbar = () => {
           </div>
 
           <ul className='hidden lg:flex gap-10 text-base'>
-            <li>
+          {user?.accountType === "seeker" ? (
+              <li>
               <Link to='/'>Find Job</Link>
-            </li>
+              </li>
+              ):(<li>
+              <Link to='/'>View Job Market</Link>
+            </li>)}
+            {/* <li>
+              <Link to='/'>Find Job</Link>
+            </li> */}
             <li>
               <Link to='/companies'>Companies</Link>
             </li>
