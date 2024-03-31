@@ -15,6 +15,7 @@ import Results from "./components/Results";
 import PlayQuiz from "./components/PlayQuiz";
 import Quiz from "./components/Quiz";
 import { Dashboard } from "./components/Dashboard";
+import HeroComp from "./components/HeroComp";
 
 
 function Layout() {
@@ -34,7 +35,6 @@ function App() {
   return (
     <main className='bg-[#f7fdfd]'>
       <Navbar />
-
       <Routes>
         <Route element={<Layout />}>
           <Route
@@ -57,7 +57,7 @@ function App() {
         <Route path='/about-us' element={<About />} />
         <Route path='/user-auth' element={<Auth />} />
         <Route path='/resume-generator' element={<ResumeGenerator />} />
-        <Route path="/" element={<Dashboard />}/>
+        <Route path="/dashboard" element={<Dashboard />}/>
         <Route path="/quiz" element={<Quiz />}/>
         <Route path="/playquiz/:quizId" element={<PlayQuiz />}/>
         <Route path="/results/:quizId" element={<Results />}/>

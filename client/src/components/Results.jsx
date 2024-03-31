@@ -195,6 +195,7 @@ const Results = () => {
         </h1>
         <div className='flex items-center  justify-between gap-10'>
           {myCourses[0]?.courses?.map((item)=>{
+            console.log(item)
             return(
                 <>
                  <iframe

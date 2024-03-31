@@ -121,7 +121,7 @@ const Navbar = () => {
         <nav className='container mx-auto flex items-center justify-between p-5'>
           <div>
             <Link to='/' className='text-blue-600 font-bold text-xl'>
-              Job<span className='text-[#1677cccb]'>Finder</span>
+              Code<span className='text-[#1677cccb]'>Brewers</span>
             </Link>
           </div>
 
@@ -139,7 +139,7 @@ const Navbar = () => {
               >{user?.accountType === "seeker" ? "Applications" : "Upload Job"}</Link>
             </li>
             <li>
-              <Link to='/about-us'>About</Link>
+              <Link to='/quiz'>Take Quiz</Link>
             </li>
             {user?.accountType === "seeker" ? (
               <li>

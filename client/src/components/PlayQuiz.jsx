@@ -174,7 +174,7 @@ const PlayQuiz = () => {
               onClick={() => handlePrev()}
               className={` ${
                 questionNo === 1 ? "text-black" : "text-white"
-              } border border-slate-800 disabled:bg-muted disabled:cursor-default disabled:scale-[1] cursor-pointer active:scale-[0.97] transition duration-300 ease w-[120px] text-center text-md tracking-wide font-medium py-2 px-5  inline-block rounded-[5px] `}
+              } border border-slate-800 !bg-blue-600 disabled:bg-muted disabled:cursor-default disabled:scale-[1] cursor-pointer active:scale-[0.97] transition duration-300 ease w-[120px] text-center text-md tracking-wide font-medium py-2 px-5  inline-block rounded-[5px] `}
             >
               Previous
             </Button>
@@ -183,14 +183,14 @@ const PlayQuiz = () => {
                 {questionNo === questionsAndAnswers?.length ? (
                   <Button
                     onClick={() => handleNext()}
-                    className="text-white cursor-pointer active:scale-[0.97] transition duration-300 ease w-[120px] text-center text-md tracking-wide font-medium py-2 px-5 inline-block rounded-[5px] "
+                    className="text-white !bg-blue-600 cursor-pointer active:scale-[0.97] transition duration-300 ease w-[120px] text-center text-md tracking-wide font-medium py-2 px-5 inline-block rounded-[5px] "
                   >
                     Submit
                   </Button>
                 ) : (
                   <Button
                     onClick={() => handleNext()}
-                    className=" cursor-pointer active:scale-[0.97] transition duration-300 ease w-[120px] text-center text-md tracking-wide font-medium py-2 px-5 text-white inline-block rounded-[5px] "
+                    className="!bg-blue-600 cursor-pointer active:scale-[0.97] transition duration-300 ease w-[120px] text-center text-md tracking-wide font-medium py-2 px-5 text-white inline-block rounded-[5px] "
                   >
                     Next
                   </Button>
