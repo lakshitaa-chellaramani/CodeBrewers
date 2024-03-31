@@ -36,6 +36,8 @@ const CompanyForm = ({ open, setOpen }) => {
 
       const uri = profileImage && (await handleFileUpload(profileImage));
 
+      profileImage = ("https://cdn-icons-png.flaticon.com/512/2936/2936630.png")
+
       const newData = uri ? { ...data, profileUrl: uri} : data;
 
       try {
@@ -70,6 +72,7 @@ const CompanyForm = ({ open, setOpen }) => {
 
   return (
     <>
+                      
       <Transition appear show={open ?? false} as=
       {Fragment}>
         <Dialog as='div' className='relative z-50' onClose={closeModal}>
@@ -257,7 +260,7 @@ const CompanyProfile = () => {
             Welcome, {info?.name}
           </h2>
 
-          {user?.user?.accountType === undefined &&
+          {user?.accountType === undefined &&
           info?._id === user?._id && (
               <div className='flex items-center justifu-center py-5 md:py-0 gap-4'>
                 <CustomButton
