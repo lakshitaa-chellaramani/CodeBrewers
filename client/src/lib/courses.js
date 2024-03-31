@@ -150,7 +150,7 @@ const AllCourses = [
         ]
     },
     {
-        name: "C",
+        name: "CProgramming",
         difficulty:"BeginnerIntermediate",
         courses:[
             {
@@ -165,7 +165,7 @@ const AllCourses = [
         ]
     },
     {
-        name: "C",
+        name: "CProgramming",
         difficulty:"Advanced",
         courses:[
             {

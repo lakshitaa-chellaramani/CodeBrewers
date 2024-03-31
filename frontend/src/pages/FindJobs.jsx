@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import { experience, jobTypes, jobs } from "../utils/data";
 import { CustomButton, JobCard, ListBox, Loading } from "../components";
 import { apiRequest } from "../utils";
+import HeroComp from "@/components/HeroComp";
 
 const FindJobs = () => {
   const [sort, setSort] = useState("Newest");
@@ -120,6 +121,7 @@ const FindJobs = () => {
 
   return (
     <div>
+      <HeroComp />
       <Header
         title='Find Your Dream Job with Ease'
         type='home'
@@ -130,7 +132,7 @@ const FindJobs = () => {
         setLocation={setJobLocation}
       />
 
-      <div className='container mx-auto flex gap-6 2xl:gap-10 md:px-5 py-0 md:py-6 bg-[#f7fdfd]'>
+      <div className='container mx-auto flex gap-6 2xl:gap-10 md:px-5 py-0 md:py-6 -mt-[70px] bg-[#f7fdfd]'>
         <div className='hidden md:flex flex-col w-1/6 h-fit bg-white shadow-sm'>
           <p className='text-lg font-semibold text-slate-600'>Filter Search</p>
 

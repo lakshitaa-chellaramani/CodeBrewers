@@ -42,7 +42,7 @@ const Quiz = () => {
 
           <Button
           disabled={loading}
-            className="mt-2 w-[200px] py-6"
+            className="mt-2 w-[200px] py-6 bg-blue-600"
             onClick={() => generateQuiz()}
           >
             {loading ? "loading..." : "Start Quiz"}
@@ -52,7 +52,7 @@ const Quiz = () => {
         <div className="flex w-[45%] gap-[20px] items-center justify-center flex-wrap">
           <Button
             className={` ${
-              lang === "Javascript" ? "bg-blue-800" : ""
+              lang === "Javascript" ? "bg-slate-800" : "bg-blue-600"
             } flex cursor-pointer hover:border hover:bg-blue-800 hover:border-white
             hover:scale-[1.02] active:scale-[0.97] transition duration-200 ease
             w-[30%] h-[200px] p-10 items-center justify-center flex-col`}
@@ -63,7 +63,7 @@ const Quiz = () => {
           </Button>
           <Button
             className={` ${
-              lang === "Python" ? "bg-blue-800" : ""
+              lang === "Python" ? "bg-slate-800" : "bg-blue-600"
             } flex h-[200px] cursor-pointer hover:border hover:bg-blue-800 hover:border-white hover:scale-[1.02] active:scale-[0.97] transition duration-200 ease w-[30%] p-10 items-center justify-center flex-col`}
             onClick={() => setLang("Python")}
           >
@@ -72,7 +72,7 @@ const Quiz = () => {
           </Button>
           <Button
             className={`flex ${
-              lang === "Java" ? "bg-blue-800" : ""
+              lang === "Java" ? "bg-slate-800" : "bg-blue-600"
             } cursor-pointer h-[200px] hover:border hover:bg-blue-800 hover:border-white hover:scale-[1.02] active:scale-[0.97] transition duration-200 ease w-[30%] p-10 items-center justify-center flex-col`}
             onClick={() => setLang("Java")}
           >
@@ -81,7 +81,7 @@ const Quiz = () => {
           </Button>
           <Button
             className={`${
-              lang === "C++" ? "bg-blue-800" : ""
+              lang === "C++" ? "bg-slate-800" : "bg-blue-600"
             } flex cursor-pointer h-[200px] hover:border hover:bg-blue-800 hover:border-white hover:scale-[1.02] active:scale-[0.97] transition duration-200 ease w-[30%] p-10 items-center justify-center flex-col`}
             onClick={() => setLang("C++")}
           >
@@ -90,7 +90,7 @@ const Quiz = () => {
           </Button>
           <Button
             className={` ${
-              lang === "Rust" ? "bg-blue-800" : ""
+              lang === "Rust" ? "bg-slate-800" : "bg-blue-600"
             } flex cursor-pointer h-[200px] hover:border hover:bg-blue-800 hover:border-white hover:scale-[1.02] active:scale-[0.97] transition duration-200 ease w-[30%] p-10 items-center justify-center flex-col`}
             onClick={() => setLang("Rust")}
           >
@@ -99,7 +99,7 @@ const Quiz = () => {
           </Button>
           <Button
             className={` ${
-              lang === "CProgramming" ? "bg-blue-800" : ""
+              lang === "CProgramming" ? "bg-slate-800" : "bg-blue-600"
             }  flex cursor-pointer h-[200px] hover:border hover:bg-blue-800 hover:border-white hover:scale-[1.02] active:scale-[0.97] transition duration-200 ease w-[30%] p-10 items-center justify-center flex-col`}
             onClick={() => setLang("CProgramming")}
           >
