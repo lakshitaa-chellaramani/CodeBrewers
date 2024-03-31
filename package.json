@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@types/aria-query": "^5.0.4"
+  }
+}

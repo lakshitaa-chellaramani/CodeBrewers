@@ -11,6 +11,10 @@ import {
   UserProfile,
 } from "./pages";
 import { useSelector } from "react-redux";
+import Results from "./components/Results";
+import PlayQuiz from "./components/PlayQuiz";
+import Quiz from "./components/Quiz";
+import { Dashboard } from "./components/Dashboard";
 
 
 function Layout() {
@@ -53,7 +57,12 @@ function App() {
         <Route path='/about-us' element={<About />} />
         <Route path='/user-auth' element={<Auth />} />
         <Route path='/resume-generator' element={<ResumeGenerator />} />
-      </Routes>
+        <Route path="/" element={<Dashboard />}/>
+        <Route path="/quiz" element={<Quiz />}/>
+        <Route path="/playquiz/:quizId" element={<PlayQuiz />}/>
+        <Route path="/results/:quizId" element={<Results />}/>
+        </Routes>
+      
       {user && <Footer />}
     </main>
   );
