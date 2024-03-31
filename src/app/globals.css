@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../utils/fonts/AeonikTRIAL-Bold.otf') format('truetype');
+  /* Add additional font weights and styles if needed */
+}
+
+/* Aeonik REGULAR */
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('../utils/fonts/AeonikProTRIAL-Regular.otf') format('truetype');
+  /* Add additional font weights and styles if needed */
+}
+
+.heading{
+  font-family: 'Aeonik';
+  
+}
+
+
+
+
+.Paras{
+  font-family: 'Aeonik Pro';
+  
+
+}
